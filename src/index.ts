@@ -1,6 +1,6 @@
 
 
 
-const mensaje = 'Hola Mundo!';
+const mensaje = 'Hola Mundito!';
 
 console.log( mensaje );
