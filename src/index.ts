@@ -1,8 +1,16 @@
 import db from "./firebase/config"
 import { retornaDocumentos } from "./helpers/mostrar-documentos";
-import { firestore } from "firebase";
 
 const usuariosRef = db.collection("usuarios");
 
-usuariosRef.orderBy("nombre","desc")
+usuariosRef.limit(5)
 .get().then(retornaDocumentos) 
+
+const btn = document.createElement("button")
+btn.innerText = "Next page";
+document.body.append ( btnNext) 
+
+btnNet.addEventListener("clic", () => {
+
+}
+
