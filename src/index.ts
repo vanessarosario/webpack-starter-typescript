@@ -23,8 +23,26 @@ const usuariosRef = db.collection("usuarios");
     //casado:true,
 //});
 
+//usuariosRef
+//.doc("cHuJKc9AIt3Tk30Br6hN")
+//.delete()
+//.then(() => console.log ("borrado") )
+//.catch (e => console.log ("error", e))
+
+//select * from usuarios:
 usuariosRef
-.doc("cHuJKc9AIt3Tk30Br6hN")
-.delete()
-.then(() => console.log ("borrado") )
-.catch (e => console.log ("error", e))
+.onSnapshot( snap => {
+  
+    const usuarios: any [] = [] ;
+
+     snap.forEach(snapHijo => 
+      usuarios.push({
+          id: snapHijo.id
+      }
+      
+          
+      
+    });
+})
+
+console.log (usuario);
