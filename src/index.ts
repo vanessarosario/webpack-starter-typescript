@@ -23,4 +23,8 @@ const usuariosRef = db.collection("usuarios");
     //casado:true,
 //});
 
-
+usuariosRef
+.doc("cHuJKc9AIt3Tk30Br6hN")
+.delete()
+.then(() => console.log ("borrado") )
+.catch (e => console.log ("error", e))
