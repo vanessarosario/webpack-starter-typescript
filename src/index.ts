@@ -1,7 +1,9 @@
 import db from "./firebase/config"
+import { retornaDocumentos } from "./helpers/mostrar-documentos";
 
 
 const usuario ={
+
     nombre: "Ramon",
     activo: false,
     fechanaci: 0,
@@ -30,19 +32,8 @@ const usuariosRef = db.collection("usuarios");
 //.catch (e => console.log ("error", e))
 
 //select * from usuarios:
-usuariosRef
-.onSnapshot( snap => {
-  
-    const usuarios: any [] = [] ;
+//usuariosRef
+//.onSnapshot( retornaDocumentos)
 
-     snap.forEach(snapHijo => 
-      usuarios.push({
-          id: snapHijo.id
-      }
-      
-          
-      
-    });
-})
+usuariosRef.get ().then (retornaDocumentos); 
 
-console.log (usuario);
